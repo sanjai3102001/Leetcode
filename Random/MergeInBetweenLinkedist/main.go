@@ -1,6 +1,6 @@
 package main
 
-import "fmt"
+import "../../Randon/MergeInBetweenLinkedist/fmt"
 
 //Q: https://leetcode.com/problems/merge-in-between-linked-lists/description/
 
