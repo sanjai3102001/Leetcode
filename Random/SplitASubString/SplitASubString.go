@@ -8,11 +8,13 @@ func main() {
 	ans := 0
 	var i int
 	for _, val := range s {
+		// Trackk pair Add L and Remove R
 		if val == 'L' {
 			i++
 		} else {
 			i--
 		}
+		// If ) we found a pair add(1) to answer
 		if i == 0 {
 			ans++
 		}
