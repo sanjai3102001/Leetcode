@@ -1,5 +1,8 @@
 package main
 
+// Q:= https://leetcode.com/problems/double-a-number-represented-as-a-linked-list/description/
+// Level: medium
+
 import (
 	"fmt"
 )
@@ -20,7 +23,6 @@ func main() {
 	}
 	head = backuphead
 
-	// Here I am appending it to a string
 	if head.Val > 4 {
 		newhead := &ListNode{Val: 0, Next: head}
 		head = newhead
