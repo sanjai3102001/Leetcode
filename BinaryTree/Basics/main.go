@@ -8,7 +8,7 @@ type BinaryTree struct {
 	Right *BinaryTree
 }
 
-// here I will be making some basic binary trii and indorder traversal
+// here I will be making some basic binary tree and preorder , inorder and postorder
 func main() {
 	// Creating root
 	root := &BinaryTree{val: 3}
@@ -20,18 +20,13 @@ func main() {
 	root.Left = &BinaryTree{val: 15}
 	root.Right = &BinaryTree{val: 7}
 
-	// for i := 1; i <= 10; i++ {
-	// 	root.Left = &BinaryTree{val: i}
-	// 	root = root.Left
-	// }
-	// root = backuproot
-	// for j := 11; j <= 20; j++ {
-	// 	root.Right = &BinaryTree{val: j}
-	// 	root = root.Right
-	// }
 	root = backuproot
-	fmt.Println(root.val)
+	fmt.Println("Inorder")
 	Inorder(root)
+	fmt.Println("Postorder")
+	Postorder(root)
+	fmt.Println("Preorder")
+	preorder(root)
 
 }
 
@@ -44,4 +39,22 @@ func Inorder(root *BinaryTree) {
 	fmt.Println(root.val)
 	Inorder(root.Right)
 
+}
+
+func Postorder(root *BinaryTree) {
+	if root == nil {
+		return
+	}
+	Postorder(root.Left)
+	Postorder(root.Right)
+	fmt.Println(root.val)
+}
+
+func preorder(root *BinaryTree) {
+	if root == nil {
+		return
+	}
+	fmt.Println(root.val)
+	preorder(root.Left)
+	preorder(root.Right)
 }
